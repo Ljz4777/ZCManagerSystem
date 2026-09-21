@@ -11,8 +11,10 @@ public interface GuestbookDao {
     public List<String> getAllContent();
     /**
      * 根据id查询某一条留言信息
+     *
+     * @return
      */
-    public void getContentById(int id);
+    public List<String> getContentById(int id);
     /**
      * 根据id修改留言信息
      */
