@@ -47,7 +47,7 @@ public class DBManager {
 			Class.forName(prop.getProperty("DRIVER"));
 			conn = DriverManager.getConnection(prop.getProperty("DBURL"),prop.getProperty("USERNAME"),prop.getProperty("USERPWD"));
 			//conn.setAutoCommit(false);//先这样简单自动提交，以后再业务层管理事务，就需要设置为false了
-			conn.setAutoCommit(true);
+			conn.setAutoCommit(false);
 			if (logger.isInfoEnabled()) {
 				logger.info("读取数据库配置文件成功！");
 			}
