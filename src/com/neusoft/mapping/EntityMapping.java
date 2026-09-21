@@ -1,6 +1,7 @@
 package com.neusoft.mapping;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public interface EntityMapping {
     //定义一个抽象方法
@@ -10,5 +11,5 @@ public interface EntityMapping {
      * @param rs
      * @return
      */
-    public Object mapping(ResultSet rs);
+    public Object mapping(ResultSet rs) throws SQLException;
 }
