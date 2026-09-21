@@ -2,9 +2,12 @@ package com.neusoft.view;
 
 import com.neusoft.db.DBManager;
 import com.neusoft.db.JdbcTemplate;
+import com.neusoft.mapping.EntityMapping;
+import com.neusoft.mapping.MappingFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class TestJdbcTemplate {
     public static void main(String[] args) throws SQLException {
@@ -21,5 +24,10 @@ public class TestJdbcTemplate {
         connection.commit();
         //connection.rollback();
         System.out.println(isRight);
+        //查询
+        //要从工厂类MappingFactory中获取Map集合中的对象
+        MappingFactory mappingFactory =MappingFactory.getInstance();
+        EntityMapping mapping = mappingFactory.getMapping(MappingFactory.GUESTBOOK_MAPPING);//GuestbookMapping
+        List<Object> list = jt.query("select * from guestbook",mapping);
     }
 }
