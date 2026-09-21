@@ -17,6 +17,6 @@ public class GuestbookMapping implements EntityMapping{
         guestbook.setTitle(rs.getString("title"));
         guestbook.setContent(rs.getString("content"));
         guestbook.setCreatetime(rs.getString("createtime"));
-        return null;
+        return guestbook;
     }
 }

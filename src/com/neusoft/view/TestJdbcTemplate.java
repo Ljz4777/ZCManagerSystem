@@ -2,6 +2,7 @@ package com.neusoft.view;
 
 import com.neusoft.db.DBManager;
 import com.neusoft.db.JdbcTemplate;
+import com.neusoft.entity.Guestbook;
 import com.neusoft.mapping.EntityMapping;
 import com.neusoft.mapping.MappingFactory;
 
@@ -29,5 +30,10 @@ public class TestJdbcTemplate {
         MappingFactory mappingFactory =MappingFactory.getInstance();
         EntityMapping mapping = mappingFactory.getMapping(MappingFactory.GUESTBOOK_MAPPING);//GuestbookMapping
         List<Object> list = jt.query("select * from guestbook",mapping);
+        for (int i = 0; i < list.size(); i++) {
+            Guestbook gb = (Guestbook) list.get(i);
+            System.out.println(gb.getName()+" "+gb.getPhone());
+        }
+
     }
 }
