@@ -1,5 +1,6 @@
 package com.neusoft.db;
 
+import com.neusoft.mapping.EntityMapping;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
