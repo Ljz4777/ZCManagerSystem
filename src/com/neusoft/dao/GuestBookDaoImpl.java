@@ -1,21 +1,22 @@
 package com.neusoft.dao;
 
+import com.neusoft.db.DBManager;
 import com.neusoft.entity.Guestbook;
-import com.neusoft.mapping.MappingFactory;
+import com.neusoft.mapping.EntityMapping;
+import com.neusoft.mapping.GuestbookMapping;
+
+import java.util.List;
 
 public class GuestBookDaoImpl implements GuestbookDao{
-    Guestbook  guestbook = new Guestbook();
 
-    public int countId(){
-        return 0;
-    }
+
 
     @Override
     /**
      * select content from guestbook;
      */
-    public void getAllContent() {
-
+    public List<String> getAllContent() {
+        return null;
     }
 
     @Override

@@ -1,10 +1,14 @@
 package com.neusoft.dao;
 
+import java.util.List;
+
 public interface GuestbookDao {
     /**
      * 查询所有的留言信息
+     *
+     * @return
      */
-    public void getAllContent();
+    public List<String> getAllContent();
     /**
      * 根据id查询某一条留言信息
      */
