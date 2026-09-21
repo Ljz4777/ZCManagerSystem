@@ -13,7 +13,7 @@ public class TestJdbcTemplate {
         //2.获取模板的对象
         JdbcTemplate jt = JdbcTemplate.getInstance();
         //3.获取数据库的连接
-        jt.setConnection(connection);
+        jt.setConnection(connection);//将DBManager中获取到的连接赋值给JdbcTemplate中的连接
         int isRight = jt.update("insert into guestbook(name,phone,email,title,content,createtime) values(?,?,?,?,?,?)",
                 "soloking","123456","emailsoloking@163.com","title","content","2026-09-21");
         System.out.println(isRight);
