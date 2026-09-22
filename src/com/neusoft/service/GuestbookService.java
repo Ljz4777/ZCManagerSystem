@@ -1,4 +1,9 @@
 package com.neusoft.service;
 
-public class GuestbookService {
+import com.neusoft.entity.Guestbook;
+
+import java.sql.SQLException;
+
+public interface GuestbookService {
+    public boolean add(Guestbook gb) throws SQLException;
 }
