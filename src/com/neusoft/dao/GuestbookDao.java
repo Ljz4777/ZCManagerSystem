@@ -1,31 +1,42 @@
 package com.neusoft.dao;
 
+import com.neusoft.entity.Guestbook;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public interface GuestbookDao {
     /**
-     * 查询所有的留言信息
-     *
+     * 查询所有留言
      * @return
      */
-    public List<String> getAllContent();
-    /**
-     * 根据id查询某一条留言信息
-     *
-     * @return
-     */
-    public List<String> getContentById(int id);
-    /**
-     * 根据id修改留言信息
-     */
-    public void updateContentById(int id,String content);
-    /**
-     * 添加留言信息
-     */
-    public void addContentById(int id,String content);
-    /**
-     * 根据id删除留言信息
-     */
-    public void deleteContentById(int id);
+    public List<Object> queryAll();
 
+    /**
+     * 根据ID查询留言
+     * @param id
+     * @return
+     */
+    public Guestbook queryById(int id);
+
+    /**
+     * 修改留言
+     * @param gb
+     * @return
+     */
+    public boolean update(Guestbook gb);
+
+    /**
+     * 添加留言
+     * @param gb
+     * @return
+     */
+    public boolean insert(Guestbook gb) throws SQLException;
+
+    /**
+     * 根据ID删除留言
+     * @param id
+     * @return
+     */
+    public boolean delete(int id);
 }
